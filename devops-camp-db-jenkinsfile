@@ -35,7 +35,7 @@ pipeline {
               stage('Database docker build') {
                   steps {
                       echo "Building database image"
-                      echo $BUILD_DB
+                      echo "Build db variable: $BUILD_DB"
                       //TODO: build docker image & push to Harbor
                       withCredentials([usernameColonPassword(credentialsId: 'aalicea-harbor-auth', variable: 'HARBOR-AUTH')]) {
                           script {
